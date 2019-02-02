@@ -1,0 +1,14 @@
+html {
+    height: 100%;
+    background-image:
+        radial-gradient(
+            /* circle at top left, */
+            rgba(255, 255, 0, 0.699),
+            blue
+        );
+    background-size: cover;
+}
+
+#swatch-box {
+    border: 1px solid red;
+}
