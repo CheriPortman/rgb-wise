@@ -1,4 +1,5 @@
 const buttonBox = document.getElementById('button-box');
+const revealBox = document.getElementById('reveal-box');
 let guess = 0;
 
 function randomRGB() {
@@ -15,15 +16,16 @@ function randomColor() {
 
 function setStage() {
     const randomIndex = Math.floor(Math.random() * Math.floor(6));
-        
+    
     for(let i = 0; i < 6; i++) {
         const rgbButton = document.createElement('button');
         const color = randomColor();
         
-        
-
         if(i === randomIndex) {
             rgbButton.setAttribute('id', 'target');
+            //here make rgb code show up in revealBox
+            revealBox.innerHTML = color;
+
             console.log('rgbButton:', rgbButton);
         }
     

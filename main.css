@@ -25,3 +25,7 @@ html {
     width: 300px;
     height: auto;
 }
+
+#reveal-box {
+    font-size: 20px;
+}
