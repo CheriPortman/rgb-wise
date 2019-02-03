@@ -19,7 +19,9 @@ function setStage() {
     for(let i = 0; i < 6; i++) {
         const rgbButton = document.createElement('button');
         const color = randomColor();
-            
+        
+        
+
         if(i === randomIndex) {
             rgbButton.setAttribute('id', 'target');
             console.log('rgbButton:', rgbButton);
@@ -36,7 +38,9 @@ function setStage() {
             event.preventDefault();
             testMatch(rgbButton);
             guess = guess + 1;
+            
             console.log('guesses:', guess);
+            
             if(guess > 2) {
                 let failImage = '<img id="fail"src=/assets/fail.png>';
                 buttonBox.innerHTML = failImage;
@@ -51,11 +55,10 @@ function testMatch(rgbButton) {
         let swatches = document.getElementById('button-box');
         
         if(swatches) {
-            swatches.removeChild(swatches.childNodes[0]);
+            let winImage = '<img src=/assets/win.png>';
+            buttonBox.innerHTML = winImage;
         }
 
-        let winImage = '<img src=/assets/win.png>';
-        buttonBox.innerHTML = winImage;
     } else {
         console.log(rgbButton);
         rgbButton.classList.add('hidden');
@@ -63,4 +66,3 @@ function testMatch(rgbButton) {
 }
 
 setStage();
-// add looses counter, lose after three guesses?
