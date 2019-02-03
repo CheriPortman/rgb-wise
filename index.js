@@ -1,6 +1,7 @@
 const buttonBox = document.getElementById('button-box');
 const revealBox = document.getElementById('reveal-box');
 let guess = 0;
+let restartButton = '<button id="reset" type="button">Try Again!</button>';
 
 function randomRGB() {
     return Math.floor(Math.random() * Math.floor(255));
@@ -23,7 +24,6 @@ function setStage() {
         
         if(i === randomIndex) {
             rgbButton.setAttribute('id', 'target');
-            //here make rgb code show up in revealBox
             revealBox.innerHTML = color;
 
             console.log('rgbButton:', rgbButton);
@@ -46,6 +46,7 @@ function setStage() {
             if(guess > 2) {
                 let failImage = '<img id="fail"src=/assets/fail.png>';
                 buttonBox.innerHTML = failImage;
+                revealBox.innerHTML = restartButton;
             }
         });
     }
