@@ -7,8 +7,20 @@ html {
             blue
         );
     background-size: cover;
+    font-family: 'Concert One', cursive;
+    text-align: center;
 }
 
+h1 {
+    text-align: center;
+    font-size: 72px;
+    background: -webkit-linear-gradient(pink, blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+}
 
 .rgb-button {
     border-radius: 50%;
@@ -28,4 +40,6 @@ html {
 
 #reveal-box {
     font-size: 20px;
+    text-align: center;
+    color: white;
 }
