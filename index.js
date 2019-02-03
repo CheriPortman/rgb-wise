@@ -18,27 +18,42 @@ function testMatch() {
 
 //test if guessSwatch has the same value as targetSwatch
     //this means I need to identify one of the swatches with an id of "target"
+        //if I make a function
+        //find a random number (ranIndex?) between 0 and 6
+        //assign the  "target" id to the appropriate swatch
 
-
-
-for(let i = 0; i < 6; i++) {
-    const rgbButton = document.createElement('button');
-    const color = randomColor();
+function setStage() {
+    const randomIndex = Math.floor(Math.random() * Math.floor(6));
+        
+    for(let i = 0; i < 6; i++) {
+        const rgbButton = document.createElement('button');
+        const color = randomColor();
     
-    rgbButton.style.backgroundColor = color;
-    rgbButton.value = color;
-    rgbButton.classList.add('rgb-button');    
-    rgbButton.textContent = 'This is it!';
+        console.log('randomIndex:', randomIndex);
+        
+        if(i === randomIndex) {
+            rgbButton.setAttribute('id', 'target');  //add id of "target" to this swatch
+            console.log('rgbButton:', rgbButton);
+        }
     
-    buttonBox.appendChild(rgbButton);
-
-    rgbButton.addEventListener('click', function(event) {
-        event.preventDefault();
-        console.log('you clicked', rgbButton.value);
-        testMatch();
-    });
+    
+        rgbButton.style.backgroundColor = color;
+        rgbButton.value = color;
+        rgbButton.classList.add('rgb-button');    
+        rgbButton.textContent = 'This is it!';
+        
+        buttonBox.appendChild(rgbButton);
+    
+        rgbButton.addEventListener('click', function(event) {
+            event.preventDefault();
+            console.log('you clicked', rgbButton.value);
+            testMatch();
+        });
+    }
 }
 
+
+setStage();
 
 
 
