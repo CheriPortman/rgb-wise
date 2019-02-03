@@ -38,6 +38,7 @@ function setStage() {
         });
     }
 }
+
 function testMatch(rgbButton) {
     let target = document.getElementById('target');
     console.log('target', target);            
@@ -45,11 +46,13 @@ function testMatch(rgbButton) {
     if(rgbButton.id === 'target') {
         let swatches = document.getElementById('button-box');
         
-        while(swatches) {
+        if(swatches) {
             swatches.removeChild(swatches.childNodes[0]);
             console.log('removed', swatches.childNodes[0]);
         }
+        
         console.log('you win');
+        buttonBox.textContent = 'You Win!';
     }
     
     //if the clicked value === target swatch value WIN
