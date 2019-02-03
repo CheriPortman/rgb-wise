@@ -20,3 +20,8 @@ html {
 .hidden {
     visibility: hidden;
 }
+
+#fail {
+    width: 300px;
+    height: auto;
+}

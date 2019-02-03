@@ -1,4 +1,5 @@
 const buttonBox = document.getElementById('button-box');
+let guess = 0;
 
 function randomRGB() {
     return Math.floor(Math.random() * Math.floor(255));
@@ -33,15 +34,19 @@ function setStage() {
     
         rgbButton.addEventListener('click', function(event) {
             event.preventDefault();
-            console.log('you clicked', rgbButton.value);
             testMatch(rgbButton);
+            guess = guess + 1;
+            console.log('guesses:', guess);
+            if(guess > 2) {
+                let failImage = '<img id="fail"src=/assets/fail.png>';
+                buttonBox.innerHTML = failImage;
+            }
         });
     }
 }
 
-function testMatch(rgbButton) {
-    // let target = document.getElementById('target');
-    
+function testMatch(rgbButton) {    
+
     if(rgbButton.id === 'target') {
         let swatches = document.getElementById('button-box');
         
@@ -58,3 +63,4 @@ function testMatch(rgbButton) {
 }
 
 setStage();
+// add looses counter, lose after three guesses?
