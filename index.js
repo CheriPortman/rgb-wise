@@ -17,7 +17,6 @@ for(let i = 0; i < 6; i++) {
     const color = randomColor();
     
     rgbButton.style.backgroundColor = color;
-    console.log(rgbButton)
 
     rgbButton.value = color;
     rgbButton.classList.add('rgb-button');
@@ -25,16 +24,15 @@ for(let i = 0; i < 6; i++) {
     
     rgbButton.textContent = 'This is it!';
     
-
-
-
-    console.log('rgb value', rgbButton.value);
     buttonBox.appendChild(rgbButton);
 
     //add event Listener
+
+    rgbButton.addEventListener('click', function(event) {
+        event.preventDefault();
+        console.log('you clicked', rgbButton.value);
+    });
 }
-//draw 6 buttons
-//each button has a
 
 
 
