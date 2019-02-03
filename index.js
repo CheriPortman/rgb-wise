@@ -33,11 +33,8 @@ function setStage() {
         if(i === randomIndex) {
             let rgbMessage = '<h4 id="rgb-message">Color to match:<h4>' + color;
             revealBox.innerHTML = rgbMessage;
-            
-            
+                        
             rgbButton.setAttribute('id', 'target');    
-
-            console.log('rgbButton:', rgbButton); 
         }
     
         rgbButton.style.backgroundColor = color;
