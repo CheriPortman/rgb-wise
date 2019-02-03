@@ -39,10 +39,16 @@ function setStage() {
     }
 }
 function testMatch(rgbButton) {
-    let target = document.getElementById("target");
-    console.log('target', target);            //need to figure out how to test 
+    let target = document.getElementById('target');
+    console.log('target', target);            
     
     if(rgbButton.id === 'target') {
+        let swatches = document.getElementById('button-box');
+        
+        while(swatches) {
+            swatches.removeChild(swatches.childNodes[0]);
+            console.log('removed', swatches.childNodes[0]);
+        }
         console.log('you win');
     }
     
