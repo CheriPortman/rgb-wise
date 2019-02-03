@@ -40,33 +40,21 @@ function setStage() {
 }
 
 function testMatch(rgbButton) {
-    let target = document.getElementById('target');
-    console.log('target', target);            
+    // let target = document.getElementById('target');
     
     if(rgbButton.id === 'target') {
         let swatches = document.getElementById('button-box');
         
         if(swatches) {
             swatches.removeChild(swatches.childNodes[0]);
-            console.log('removed', swatches.childNodes[0]);
         }
-        
-        console.log('you win');
-        buttonBox.textContent = 'You Win!';
-    }
-    
-    //if the clicked value === target swatch value WIN
-    //if the clicked value !== target swatch
-        //remove swatch
-        //replace with rgb of removed swatch
-        //try = try++
-            //three attempts?
 
+        let winImage = '<img src=/assets/win.png>';
+        buttonBox.innerHTML = winImage;
+    } else {
+        console.log(rgbButton);
+        rgbButton.classList.add('hidden');
+    }
 }
 
-
-
 setStage();
-
-
-
