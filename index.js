@@ -8,17 +8,25 @@ function randomColor() {
     let r = randomRGB();
     let g = randomRGB();
     let b = randomRGB();
-    let rgb = '(' + r + ',' + g + ',' + b + ')';
+    let rgb = 'rgb(' + r + ',' + g + ',' + b + ')';
     return rgb;
 }
 
 for(let i = 0; i < 6; i++) {
-    // console.log(randomColor());
     const rgbButton = document.createElement('button');
-    rgbButton.textContent = 'This is it!';
-    rgbButton.value = randomColor();
+    const color = randomColor();
+    
+    rgbButton.style.backgroundColor = color;
+    console.log(rgbButton)
+
+    rgbButton.value = color;
     rgbButton.classList.add('rgb-button');
-    rgbButton.style.backgroundColor = rgbButton.value;
+    rgbButton.style.backgroundColor = color;
+    
+    rgbButton.textContent = 'This is it!';
+    
+
+
 
     console.log('rgb value', rgbButton.value);
     buttonBox.appendChild(rgbButton);
