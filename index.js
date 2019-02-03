@@ -1,7 +1,6 @@
 const buttonBox = document.getElementById('button-box');
 const revealBox = document.getElementById('reveal-box');
 let guess = 0;
-let restartButton = '<button id="reset" type="button">Try Again!</button>';
 
 function randomRGB() {
     return Math.floor(Math.random() * Math.floor(255));
@@ -13,6 +12,14 @@ function randomColor() {
     let b = randomRGB();
     let rgb = 'rgb(' + r + ',' + g + ',' + b + ')';
     return rgb;
+}
+
+function restartOption() {
+    let restartButton = '<button id="reset" type="button">Try Again!</button>';
+    revealBox.innerHTML = restartButton;
+    reset.addEventListener('click', function() {
+        location.reload();
+    })
 }
 
 function setStage() {
@@ -46,7 +53,7 @@ function setStage() {
             if(guess > 2) {
                 let failImage = '<img id="fail"src=/assets/fail.png>';
                 buttonBox.innerHTML = failImage;
-                revealBox.innerHTML = restartButton;
+                restartOption();
             }
         });
     }
@@ -60,6 +67,7 @@ function testMatch(rgbButton) {
         if(swatches) {
             let winImage = '<img src=/assets/win.png>';
             buttonBox.innerHTML = winImage;
+            restartOption();
         }
 
     } else {
