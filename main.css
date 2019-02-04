@@ -3,7 +3,7 @@ html {
     background-image:
         radial-gradient(
             /* circle at top left, */
-            rgba(255, 255, 0, 0.699),
+            rgba(255, 255, 0, 0.9),
             blue
         );
     background-size: cover;
@@ -17,7 +17,6 @@ h1 {
     background: -webkit-linear-gradient(pink, blue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
 }
@@ -26,7 +25,7 @@ h1 {
     border-radius: 50%;
     height: 200px;
     width: 200px;
-    border: 1px solid black;
+    border: 3px solid black;
 }
 
 .hidden {
@@ -41,5 +40,5 @@ h1 {
 #reveal-box {
     font-size: 20px;
     text-align: center;
-    color: white;
+    color: rgb(131, 123, 123);
 }
